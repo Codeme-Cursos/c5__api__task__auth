@@ -1,11 +1,11 @@
 {
-  "name": "c7__task__auth__protected__routes__api",
+  "name": "c5__api__task__auth",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r dotenv/config src/app.js",
-    "dev": "nodemon -r dotenv/config src/app.js"
+    "start": "node -r dotenv/config index.js",
+    "dev": "nodemon -r dotenv/config index.js"
   },
   "keywords": [],
   "author": "",
