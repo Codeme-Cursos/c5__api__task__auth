@@ -6,7 +6,7 @@ const getUsers = async (req, res) => {
         return res.status(200).json(gotUsers);
     } catch (error) {
         return res.status(500).json({
-            message: `Error: ${error}`
+            error
         })
     }
 }
@@ -22,16 +22,16 @@ const deleteUserById = async (req, res) => {
                 where: { id }
             })
             return res.status(200).json({
-                message: 'User deleted successfully'
+                error: 'Usuario eliminado con éxito'
             })
         } catch (error) {
             return res.status(500).json({
-                message: `Error: ${error}`
+                error
             })
         }
     } else {
         return res.status(404).json({
-            message: 'User not found'
+            error: 'Usuario no encontrado'
         })
     }
 }

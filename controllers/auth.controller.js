@@ -20,15 +20,17 @@ const register = async (req, res) => {
             }, {
                 fields: ['username', 'email', 'password']
             })
-            return res.status(201).json(registeredUser)
+            return res.status(201).json({
+                success: 'Registro exitoso'
+            })
         } catch (error) {
             return res.status(500).json({
-                message: `Error: ${error}`
+                error
             })
         }
     } else {
         return res.status(500).json({
-            message: 'Email already exist'
+            error: 'Este email ya se encuentra registrado'
         })
     }
 }
@@ -44,10 +46,11 @@ const login = async (req, res) => {
         try {
             const checkPassword = await bcrypt.compare(password, user.password)
             const token = jwt.sign({ user }, process.env.JWT_SECRET, {
-                expiresIn: 86400 //24 hours in seconds
+                expiresIn: 86400 //24 horas expresadas en segundos
             })
             if (checkPassword) {
                 return res.status(200).json({
+                    success: 'Ingreso exitoso',
                     user: {
                         username: user.username,
                         email: user.email
@@ -56,17 +59,17 @@ const login = async (req, res) => {
                 })
             } else {
                 return res.status(400).json({
-                    message: 'Wrong password'
+                    error: 'Contraseña incorrecta'
                 })
             }
         } catch (error) {
             return res.status(500).json({
-                message: `Error: ${error}`
+                error
             })
         }
     } else {
         return res.status(404).json({
-            message: 'User not found'
+            error: 'Email no registrado'
         })
     }
 }
