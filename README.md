@@ -70,7 +70,7 @@ npm i express pg pg-hstore sequelize morgan dotenv helmet compression cors ejs j
 
 ## Instalación de Módulos de Desarrollo
 
-3. Reemplaza el comando "test" dentro del "scripts", del archivo "package.json":
+#### Reemplaza el comando "test" dentro del "scripts", del archivo "package.json":
 Esto:
 ```json
 "scripts": {
@@ -80,20 +80,28 @@ Esto:
 Por:
 ```json
 "scripts": {
-    "start": "node -r dotenv/config src/app.js"
+    "start": "node -r dotenv/config index.js"
 }
 ```
 ##### Instalación de Nodemon, para que el servidor se reinicie automáticamente cada vez que modifiquemos el código
 ```bash
 npm i nodemon -D
 ```
-* Agrega el siguiente script dentro de "scripts" del archivo "package.json"
+#### Agrega el siguiente script dentro de "scripts" del archivo "package.json"
 ```json
 "scripts": {
-    "dev": "nodemon -r dotenv/config src/app.js",
+    "dev": "nodemon -r dotenv/config index.js",
   }
 ```
-##### Todos los Módulos de Desarrollo
+
+# Scripts del Proyecto
+
+#### Scripts para levantar un servidor local usando Node
 ```bash
-npm i nodemon -D
-```
+npm run start
+``` 
+
+#### Scripts para levantar un servidor local usando Nodemon
+```bash
+npm run dev
+``` 
