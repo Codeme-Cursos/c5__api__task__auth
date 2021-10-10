@@ -47,12 +47,6 @@ npm i compression
 npm i cors 
 ```
 
-##### Instalación de Ejs, permite trabajar con templates de html de fácil y rápida ejecución.
-[https://ejs.co/]
-```bash
-npm i ejs
-```
-
 ##### Instalación de Json Web Token, permite generar tokens de usuarios para consultar información de forma segura.
 ```bash
 npm i jsonwebtoken
@@ -65,7 +59,7 @@ npm i bcryptjs
 
 ##### Todos los Módulos principales
 ```bash
-npm i express pg pg-hstore sequelize morgan dotenv helmet compression cors ejs jsonwebtoken bcryptjs
+npm i express pg pg-hstore sequelize morgan dotenv helmet compression cors jsonwebtoken bcryptjs
 ```
 
 ## Instalación de Módulos de Desarrollo
